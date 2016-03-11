@@ -41,8 +41,9 @@
                     <div class="form-group">
                         <label for="inputCategory" class="control-label">Category</label>
                         <select name="category_id" class="form-control" id="inputCategory">
-                            <option value="1">Uncategorized</option>
-                            <option value="2">My Category</option>
+                            @foreach($categories as $category)
+                                <option>{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

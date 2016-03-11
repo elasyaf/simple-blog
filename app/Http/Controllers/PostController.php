@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
-    function __construct(Post $post)
+    function __construct(Post $post, Category $category)
     {
         $this->post = $post;
+        $this->category = $category;
     }
 
     public function index(Request $request)
@@ -22,7 +24,8 @@ class PostController extends Controller
 
     public function form(Request $request)
     {
-        return response()->view('posts.form');
+        $categories = $this->category->all();
+        return response()->view('posts.form', ['categories' => $categories]);
     }
 
     public function save(Request $request)
