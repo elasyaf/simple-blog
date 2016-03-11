@@ -23,6 +23,8 @@ Route::get('/posts', ['as' => 'posts.index', function () {
 Route::get('/posts/form', ['as' => 'posts.form', function () {
     return view('posts.form');
 }]);
+
+Route::post('/posts/save', ['as' => 'posts.save', 'uses' => 'PostController@save']);
 /*
 |--------------------------------------------------------------------------
 | Application Routes

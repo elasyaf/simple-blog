@@ -33,7 +33,7 @@
         <div class="container">
             <div class="col-md-6">
                 <h2>Create New Post</h2>
-                <form>
+                <form method="post" action="{{route('posts.save')}}">
                     <div class="form-group">
                         <label for="inputTitle" class="control-label">Title</label>
                         <input type="text" name="title" id="inputTitle" placeholder="Post Title" class="form-control"/>
